@@ -34,6 +34,7 @@ Open http://localhost:3000.
 
 ## Editing content
 
-- Work history: `src/data/workExperience.ts`
+- Work history, research, publications and awards: `src/data/workExperience.ts`
+- CV download: `public/MD_Sahidul_Islam_Turab_Resume.pdf`
 - Skills, education and contact: `src/app/page.tsx`
 - Page title and SEO: `src/app/layout.tsx`

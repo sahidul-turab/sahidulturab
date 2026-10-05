@@ -3,8 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Scene, SkillCategory } from "@/components/Scene";
 import { useState, useEffect } from "react";
-import { ExternalLink, Calendar, GraduationCap, Quote, Smartphone, Linkedin, MapPin, Award } from "lucide-react";
-import { workData as mockWork } from "@/data/workExperience";
+import { ExternalLink, FileText, GraduationCap, Smartphone, Linkedin, MapPin, Award, Github, Trophy, BookOpen } from "lucide-react";
+import { workData as mockWork, awards, publications, manuscripts, researchProjects } from "@/data/workExperience";
 
 const skillsList = [
     { name: "Python", category: "technical" as const, info: "Utilized for automation and complex data modeling." },
@@ -15,16 +15,16 @@ const skillsList = [
 ];
 
 const educationData = [
-    { degree: "MSc in Computer Science & Engineering", school: "United International University", date: "Feb 2024 - Present", location: "Madani Avenue, Dhaka" },
-    { degree: "BSc in Textile Engineering (Fabric)", school: "Bangladesh University of Textiles", date: "Graduation Year: 2022", info: "CGPA: 3.24", location: "Tejgaon, Dhaka" },
+    { degree: "M.Sc. in CSE, Major in Data Science", school: "United International University", date: "Feb 2024 - Oct 2025", info: "CGPA: 3.81/4.00", location: "Madani Avenue, Dhaka" },
+    { degree: "B.Sc. in Textile Engineering (Fabric)", school: "Bangladesh University of Textiles", date: "Jan 2017 - Dec 2022", info: "CGPA: 3.24/4.00", location: "Tejgaon, Dhaka" },
     { degree: "Higher Secondary Certificate (HSC)", school: "Notre Dame College", date: "Graduation Year: 2016", info: "GPA: 5.00", location: "Motijheel, Dhaka" },
     { degree: "Secondary School Certificate (SSC)", school: "Shaheed Police Smrity School & College", date: "Graduation Year: 2014", info: "GPA: 5.00", location: "Mirpur, Dhaka" },
 ];
 
-const interests = ["Management & Operations", "Process Optimization", "Supply Chain", "Gaming", "Sports", "Travelling"];
+const interests = ["Management & Operations", "Educational Process Optimization", "Supply Chain", "Gaming", "Sports", "Travelling"];
 
 const SideNav = () => {
-    const sections = ['home', 'about', 'experience', 'skills', 'academic', 'contact'];
+    const sections = ['home', 'about', 'experience', 'skills', 'academic', 'research', 'contact'];
     const [activeSection, setActiveSection] = useState('home');
 
     useEffect(() => {
@@ -74,7 +74,7 @@ export default function Home() {
                     style={{ textAlign: "center", pointerEvents: "none", padding: "0 2rem" }}
                 >
                     <p style={{ letterSpacing: "0.8em", fontSize: "0.7rem", color: "var(--accent)", marginBottom: "2rem", textTransform: "uppercase" }}>
-                        Operations Leader // MSc in CSE candidate
+                        Deputy Manager, Program Operations // M.Sc. in CSE (Data Science)
                     </p>
                     <h1 style={{
                         fontSize: "clamp(3rem, 12vw, 10rem)",
@@ -95,10 +95,11 @@ export default function Home() {
                     <h2 style={{ fontSize: "clamp(1.5rem, 6vw, 4.5rem)", fontWeight: 200, letterSpacing: "-0.02em", fontFamily: "var(--font-syne)" }}>
                         MD SAHIDUL ISLAM TURAB
                     </h2>
-                    <div style={{ display: "flex", gap: "2rem", justifyContent: "center", marginTop: "2rem", opacity: 0.6, fontSize: "0.8rem", pointerEvents: "auto" }}>
+                    <div style={{ display: "flex", gap: "1.5rem 2rem", flexWrap: "wrap", justifyContent: "center", marginTop: "2rem", opacity: 0.6, fontSize: "0.8rem", pointerEvents: "auto" }}>
                         <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}><MapPin size={14} /> Mirpur, Dhaka</span>
                         <a href="tel:+8801946921337" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "inherit", textDecoration: "none" }}><Smartphone size={14} /> +8801946921337</a>
-                        <a href="https://www.linkedin.com/in/sahidulturab/" target="_blank" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "inherit", textDecoration: "none" }}><Linkedin size={14} /> LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/sahidulturab/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "inherit", textDecoration: "none" }}><Linkedin size={14} /> LinkedIn</a>
+                        <a href="https://github.com/sahidul-turab" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "inherit", textDecoration: "none" }}><Github size={14} /> GitHub</a>
                     </div>
 
                     <motion.div
@@ -143,8 +144,8 @@ export default function Home() {
                         borderLeft: "2px solid var(--accent)",
                         paddingLeft: "2rem"
                     }}>
-                        "Bridging <span style={{ color: "var(--accent)" }}>Textile Engineering</span> with an <span style={{ color: "var(--accent)" }}>MSc in Computer Science</span>.
-                        I am an Operations Leader specializing in optimizing workflows and leading cross-functional teams to achieve peak efficiency."
+                        "5+ years at Shikho, from Junior Executive to <span style={{ color: "var(--accent)" }}>Deputy Manager, Program Operations</span>.
+                        I launch and run large-scale education programs on time, working across Academic, Product, Brand and Sales, and back every decision with data from an <span style={{ color: "var(--accent)" }}>M.Sc. in Data Science</span>."
                     </p>
                 </motion.div>
             </section>
@@ -231,23 +232,23 @@ export default function Home() {
                     <h2 style={{ fontSize: "0.8rem", letterSpacing: "0.5em", color: "var(--accent)", marginBottom: "1rem" }}>INTELLIGENCE DASHBOARD</h2>
                     <h3 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", marginBottom: "3rem", fontFamily: "var(--font-syne)" }}>TECHNICAL OVERVIEW</h3>
 
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", width: "100%" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: "2rem", width: "100%" }}>
                         <div style={{ background: "rgba(255,255,255,0.02)", padding: "2rem", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.05)" }}>
                             <h4 style={{ color: "#ffd700", fontSize: "0.8rem", marginBottom: "1.5rem", letterSpacing: "2px" }}>DATA & ANALYSIS</h4>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", justifyContent: "center" }}>
-                                {["SQL", "Power BI", "Python"].map(s => <span key={s} style={{ fontSize: "0.7rem", padding: "5px 12px", border: "1px solid rgba(255,215,0,0.3)", borderRadius: "20px", color: "#ffd700" }}>{s}</span>)}
+                                {["SQL", "Python", "Power BI", "Metabase", "Data Visualization", "Statistical & Predictive Modeling"].map(s => <span key={s} style={{ fontSize: "0.7rem", padding: "5px 12px", border: "1px solid rgba(255,215,0,0.3)", borderRadius: "20px", color: "#ffd700" }}>{s}</span>)}
                             </div>
                         </div>
                         <div style={{ background: "rgba(255,255,255,0.02)", padding: "2rem", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.05)" }}>
-                            <h4 style={{ color: "#4285f4", fontSize: "0.8rem", marginBottom: "1.5rem", letterSpacing: "2px" }}>OPERATIONAL TOOLS</h4>
+                            <h4 style={{ color: "#4285f4", fontSize: "0.8rem", marginBottom: "1.5rem", letterSpacing: "2px" }}>TOOLS & AUTOMATION</h4>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", justifyContent: "center" }}>
-                                {["MS Office", "Google Workspace", "WordPress"].map(s => <span key={s} style={{ fontSize: "0.7rem", padding: "5px 12px", border: "1px solid rgba(66,133,244,0.3)", borderRadius: "20px", color: "#4285f4" }}>{s}</span>)}
+                                {["Workflow Automation", "Node.js", "Docker", "Google Cloud", "Google Workspace", "MS Office", "WordPress"].map(s => <span key={s} style={{ fontSize: "0.7rem", padding: "5px 12px", border: "1px solid rgba(66,133,244,0.3)", borderRadius: "20px", color: "#4285f4" }}>{s}</span>)}
                             </div>
                         </div>
                         <div style={{ background: "rgba(255,255,255,0.02)", padding: "2rem", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.05)" }}>
-                            <h4 style={{ color: "#00ffcc", fontSize: "0.8rem", marginBottom: "1.5rem", letterSpacing: "2px" }}>STRATEGIC STRATEGY</h4>
+                            <h4 style={{ color: "#00ffcc", fontSize: "0.8rem", marginBottom: "1.5rem", letterSpacing: "2px" }}>OPERATIONS & MANAGEMENT</h4>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", justifyContent: "center" }}>
-                                {["Management", "Optimization", "Supply Chain"].map(s => <span key={s} style={{ fontSize: "0.7rem", padding: "5px 12px", border: "1px solid rgba(0,255,204,0.3)", borderRadius: "20px", color: "#00ffcc" }}>{s}</span>)}
+                                {["Team Leadership", "Stakeholder Management", "Process Optimization", "KPI Design", "Budgeting"].map(s => <span key={s} style={{ fontSize: "0.7rem", padding: "5px 12px", border: "1px solid rgba(0,255,204,0.3)", borderRadius: "20px", color: "#00ffcc" }}>{s}</span>)}
                             </div>
                         </div>
                     </div>
@@ -261,7 +262,7 @@ export default function Home() {
                 <div style={{ maxWidth: "1200px", width: "100%", padding: "0 2rem" }}>
                     <h2 style={{ fontSize: "0.8rem", letterSpacing: "0.5em", color: "var(--accent)", marginBottom: "4rem", textAlign: "center" }}>ACADEMIC FOUNDATION</h2>
 
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "3rem" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(350px, 100%), 1fr))", gap: "3rem" }}>
                         {/* MSc Path */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -278,9 +279,11 @@ export default function Home() {
                         >
                             <div style={{ position: "absolute", top: 0, right: 0, width: "100px", height: "100px", background: "radial-gradient(circle at center, rgba(0, 255, 204, 0.1), transparent 70%)" }} />
                             <GraduationCap size={40} style={{ color: "var(--accent)", marginBottom: "2rem" }} />
-                            <h3 style={{ fontSize: "1.8rem", marginBottom: "0.5rem", fontFamily: "var(--font-syne)" }}>MSc in Computer Science & Engineering</h3>
-                            <p style={{ color: "var(--accent)", fontSize: "1rem", marginBottom: "1rem" }}>United International University</p>
-                            <p style={{ opacity: 0.5, fontSize: "0.8rem", marginBottom: "2rem" }}>Feb 2024 - Present | Madani Avenue, Dhaka</p>
+                            <h3 style={{ fontSize: "1.8rem", marginBottom: "0.5rem", fontFamily: "var(--font-syne)" }}>M.Sc. in Computer Science & Engineering</h3>
+                            <p style={{ opacity: 0.7, fontSize: "0.9rem", marginBottom: "0.5rem" }}>Major in Data Science</p>
+                            <p style={{ color: "var(--accent)", fontSize: "1rem", marginBottom: "0.5rem" }}>United International University (UIU)</p>
+                            <p style={{ color: "var(--accent)", fontWeight: "bold", fontSize: "1.1rem" }}>CGPA: 3.81/4.00</p>
+                            <p style={{ opacity: 0.5, fontSize: "0.8rem", marginBottom: "2rem" }}>Feb 2024 - Oct 2025 | Madani Avenue, Dhaka</p>
 
                             <div className="course-trigger" style={{ position: "relative" }}>
                                 <button style={{
@@ -293,7 +296,7 @@ export default function Home() {
                                     letterSpacing: "1px",
                                     textTransform: "uppercase"
                                 }}>
-                                    View Tech Stack
+                                    View Coursework
                                 </button>
                                 <div className="course-list" style={{
                                     position: "absolute", top: "100%", left: 0, width: "100%",
@@ -302,12 +305,9 @@ export default function Home() {
                                     opacity: 0, pointerEvents: "none", transition: "all 0.3s ease",
                                     zIndex: 10
                                 }}>
-                                    <p style={{ fontSize: "0.7rem", color: "var(--accent)", marginBottom: "0.5rem" }}>CORE SUBJECTS:</p>
+                                    <p style={{ fontSize: "0.7rem", color: "var(--accent)", marginBottom: "0.5rem" }}>KEY COURSEWORK:</p>
                                     <ul style={{ listStyle: "none", padding: 0, fontSize: "0.8rem", color: "white", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
-                                        <li>• Advanced Python</li>
-                                        <li>• Data Structures</li>
-                                        <li>• Algorithms</li>
-                                        <li>• Database Systems</li>
+                                        {["Data Analytics", "Machine Learning", "Deep Learning", "NLP", "Big Data", "Business Analytics", "Decision Support"].map(c => <li key={c}>• {c}</li>)}
                                     </ul>
                                 </div>
                             </div>
@@ -327,27 +327,41 @@ export default function Home() {
                             }}
                         >
                             <Award size={40} style={{ color: "white", marginBottom: "2rem", opacity: 0.5 }} />
-                            <h3 style={{ fontSize: "1.8rem", marginBottom: "0.5rem", fontFamily: "var(--font-syne)" }}>BSc in Textile Engineering</h3>
+                            <h3 style={{ fontSize: "1.8rem", marginBottom: "0.5rem", fontFamily: "var(--font-syne)" }}>B.Sc. in Textile Engineering</h3>
                             <p style={{ color: "white", opacity: 0.6, fontSize: "1rem", marginBottom: "0.5rem" }}>Bangladesh University of Textiles (BUTEX)</p>
-                            <p style={{ color: "var(--accent)", fontWeight: "bold", fontSize: "1.1rem" }}>CGPA: 3.24</p>
-                            <p style={{ opacity: 0.5, fontSize: "0.8rem", marginBottom: "2rem" }}>Class of 2022 | Fabric Engineering</p>
-                            <button style={{
-                                background: "rgba(255,255,255,0.05)",
-                                border: "1px solid rgba(255,255,255,0.1)",
-                                color: "white",
-                                padding: "10px 20px",
-                                borderRadius: "30px",
-                                fontSize: "0.7rem",
-                                letterSpacing: "1px",
-                                textTransform: "uppercase"
-                            }}>
-                                View Core Skills
-                            </button>
+                            <p style={{ color: "var(--accent)", fontWeight: "bold", fontSize: "1.1rem" }}>CGPA: 3.24/4.00</p>
+                            <p style={{ opacity: 0.5, fontSize: "0.8rem", marginBottom: "2rem" }}>Jan 2017 - Dec 2022 | Fabric Engineering | Tejgaon, Dhaka</p>
+                            <div className="course-trigger" style={{ position: "relative" }}>
+                                <button style={{
+                                    background: "rgba(255,255,255,0.05)",
+                                    border: "1px solid rgba(255,255,255,0.1)",
+                                    color: "white",
+                                    padding: "10px 20px",
+                                    borderRadius: "30px",
+                                    fontSize: "0.7rem",
+                                    letterSpacing: "1px",
+                                    textTransform: "uppercase"
+                                }}>
+                                    View Coursework
+                                </button>
+                                <div className="course-list" style={{
+                                    position: "absolute", top: "100%", left: 0, width: "100%",
+                                    background: "black", border: "1px solid var(--accent)",
+                                    padding: "1rem", borderRadius: "12px", marginTop: "1rem",
+                                    opacity: 0, pointerEvents: "none", transition: "all 0.3s ease",
+                                    zIndex: 10
+                                }}>
+                                    <p style={{ fontSize: "0.7rem", color: "var(--accent)", marginBottom: "0.5rem" }}>KEY COURSEWORK:</p>
+                                    <ul style={{ listStyle: "none", padding: 0, fontSize: "0.8rem", color: "white", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
+                                        {["Mathematics", "Statistics", "Computer Programming", "Production Planning & Control", "Automation & Control"].map(c => <li key={c}>• {c}</li>)}
+                                    </ul>
+                                </div>
+                            </div>
                         </motion.div>
                     </div>
 
                     {/* School Foundation */}
-                    <div style={{ marginTop: "4rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem" }}>
+                    <div style={{ marginTop: "4rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: "2rem" }}>
                         <div style={{ borderLeft: "1px solid rgba(255,255,255,0.1)", paddingLeft: "1.5rem" }}>
                             <h4 style={{ fontSize: "0.9rem", color: "white" }}>Notre Dame College</h4>
                             <p style={{ fontSize: "0.8rem", color: "var(--accent)" }}>HSC | GPA: 5.00</p>
@@ -367,6 +381,75 @@ export default function Home() {
                         transform: translateY(-5px);
                     }
                 `}</style>
+            </section>
+
+            {/* Research, Publications & Recognition */}
+            <section id="research" style={{ minHeight: "120vh" }}>
+                <div style={{ maxWidth: "1200px", width: "100%", padding: "0 2rem" }}>
+                    <h2 style={{ fontSize: "0.8rem", letterSpacing: "0.5em", color: "var(--accent)", marginBottom: "4rem", textAlign: "center" }}>RESEARCH & RECOGNITION</h2>
+
+                    {publications.map(pub => (
+                        <motion.a
+                            key={pub.link}
+                            href={pub.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            style={{
+                                display: "block", textDecoration: "none", color: "white",
+                                background: "rgba(0, 255, 204, 0.04)", padding: "2.5rem", borderRadius: "24px",
+                                border: "1px solid rgba(0, 255, 204, 0.25)", backdropFilter: "blur(30px)", marginBottom: "3rem"
+                            }}
+                        >
+                            <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "1rem", color: "var(--accent)", fontSize: "0.7rem", letterSpacing: "0.3em" }}>
+                                <BookOpen size={16} /> {pub.status.toUpperCase()} PUBLICATION <ExternalLink size={12} />
+                            </div>
+                            <h3 style={{ fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)", lineHeight: 1.35, marginBottom: "1rem", fontFamily: "var(--font-syne)" }}>{pub.title}</h3>
+                            <p style={{ fontSize: "0.85rem", opacity: 0.6, marginBottom: "0.4rem" }}>{pub.authors}</p>
+                            <p style={{ fontSize: "0.85rem", fontStyle: "italic", color: "var(--accent)" }}>{pub.venue}</p>
+                        </motion.a>
+                    ))}
+
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "2rem" }}>
+                        {researchProjects.map(rp => (
+                            <motion.div
+                                key={rp.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                style={{ background: "rgba(255,255,255,0.03)", padding: "2rem", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(20px)" }}
+                            >
+                                <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "#ffd700", marginBottom: "0.8rem", textTransform: "uppercase" }}>{rp.tag}</p>
+                                <h4 style={{ fontSize: "1.05rem", color: "white", marginBottom: "0.8rem", lineHeight: 1.35 }}>{rp.title}</h4>
+                                <p style={{ fontSize: "0.85rem", opacity: 0.65, lineHeight: 1.6 }}>{rp.text}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    <div style={{ marginTop: "2.5rem", borderLeft: "1px solid rgba(255,255,255,0.15)", paddingLeft: "1.5rem" }}>
+                        <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", color: "var(--accent)", marginBottom: "0.8rem" }}>MANUSCRIPTS IN PREPARATION</p>
+                        {manuscripts.map(m => <p key={m} style={{ fontSize: "0.85rem", opacity: 0.6, marginBottom: "0.5rem", lineHeight: 1.5 }}>{m}</p>)}
+                    </div>
+
+                    <h3 style={{ fontSize: "0.8rem", letterSpacing: "0.5em", color: "var(--accent)", margin: "5rem 0 2rem", textAlign: "center" }}>AWARDS</h3>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))", gap: "1.5rem" }}>
+                        {awards.map(a => (
+                            <div key={a.title} style={{ display: "flex", gap: "1rem", alignItems: "flex-start", padding: "1.5rem", borderRadius: "16px", border: "1px solid rgba(255, 215, 0, 0.25)", background: "rgba(255, 215, 0, 0.04)" }}>
+                                <Trophy size={22} style={{ color: "#ffd700", flexShrink: 0 }} />
+                                <div>
+                                    <p style={{ color: "white", fontSize: "0.95rem", marginBottom: "0.3rem" }}>{a.title}</p>
+                                    <p style={{ fontSize: "0.75rem", opacity: 0.5 }}>{a.detail}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <p style={{ marginTop: "2.5rem", textAlign: "center", fontSize: "0.75rem", opacity: 0.45, lineHeight: 1.8 }}>
+                        Certifications: Skills for Inclusive Conversations (LinkedIn Learning) · Microsoft Office 365 Ultimate Bootcamp (Udemy)<br />
+                        Activities: Society for the Popularization of Science, Bangladesh (2018) · Event Organizer, BUTEX University Day (2022) & Fabric Day (2020, 2021) · Management Associate, Skills Canvas
+                    </p>
+                </div>
             </section>
 
             {/* Contact Section */}
@@ -402,7 +485,7 @@ export default function Home() {
                             SEND MESSAGE
                         </a>
                         <a
-                            href="https://calendly.com/"
+                            href="/MD_Sahidul_Islam_Turab_Resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{
@@ -421,14 +504,14 @@ export default function Home() {
                             onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--accent)"; }}
                             onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}
                         >
-                            <Calendar size={14} /> BOOK A CALL
+                            <FileText size={14} /> VIEW CV
                         </a>
                     </div>
                 </motion.div>
             </section>
 
             <footer style={{ padding: "4rem 2rem", fontSize: "0.6rem", letterSpacing: "0.2em", opacity: 0.3, textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-                © 2026 MD SAHIDUL ISLAM TURAB // OPERATIONS STRATEGIST // DESIGNED AS A DIGITAL ARTIFACT
+                © 2026 MD SAHIDUL ISLAM TURAB // DEPUTY MANAGER, PROGRAM OPERATIONS // DESIGNED AS A DIGITAL ARTIFACT
             </footer>
         </main>
     );

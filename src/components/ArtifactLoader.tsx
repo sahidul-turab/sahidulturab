@@ -8,6 +8,12 @@ export const ArtifactLoader = () => {
     const { progress } = useProgress();
     const [show, setShow] = useState(true);
 
+    // Safety net: never trap visitors behind the loader if a 3D asset fails to load
+    useEffect(() => {
+        const fallback = setTimeout(() => setShow(false), 8000);
+        return () => clearTimeout(fallback);
+    }, []);
+
     useEffect(() => {
         if (progress === 100) {
             const timer = setTimeout(() => setShow(false), 1000);

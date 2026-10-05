@@ -26,18 +26,24 @@ const skills = [
 const starSkills = [
     // Data & Analysis
     { name: "SQL", category: "data", color: "#ffd700", level: 90, info: "Utilized for data-informed decision making and program enhancements at Shikho." },
-    { name: "Power BI", category: "data", color: "#f2c811", level: 85, info: "Utilized for data-informed decision making and program enhancements at Shikho." },
-    { name: "Python", category: "data", color: "#3776ab", level: 80 },
+    { name: "Python", category: "data", color: "#3776ab", level: 85 },
+    { name: "Power BI", category: "data", color: "#f2c811", level: 85, info: "Dashboards for program, sales and enrollment metrics." },
+    { name: "Metabase", category: "data", color: "#509ee3", level: 85 },
+    { name: "Machine Learning", category: "data", color: "#ff9f1c", level: 75 },
 
-    // Operational Tools
-    { name: "MS Office", category: "tools", color: "#d83b01", level: 95 },
+    // Tools & Automation
+    { name: "Automation", category: "tools", color: "#4285f4", level: 90 },
     { name: "Google Workspace", category: "tools", color: "#4285f4", level: 95 },
-    { name: "WordPress", category: "tools", color: "#21759b", level: 75 },
+    { name: "Node.js", category: "tools", color: "#5fa04e", level: 70 },
+    { name: "Docker", category: "tools", color: "#2496ed", level: 65 },
+    { name: "Google Cloud", category: "tools", color: "#ea4335", level: 65 },
 
-    // Strategic Interests
-    { name: "Management", category: "strategy", color: "#00ffcc", level: 90 },
+    // Operations & Management
+    { name: "Leadership", category: "strategy", color: "#00ffcc", level: 90 },
+    { name: "Stakeholders", category: "strategy", color: "#00ffcc", level: 90 },
     { name: "Optimization", category: "strategy", color: "#00ffcc", level: 90 },
-    { name: "Supply Chain", category: "strategy", color: "#00ffcc", level: 80 }
+    { name: "KPI Design", category: "strategy", color: "#00ffcc", level: 85 },
+    { name: "Budgeting", category: "strategy", color: "#00ffcc", level: 80 }
 ];
 
 const noiseGLSL = `

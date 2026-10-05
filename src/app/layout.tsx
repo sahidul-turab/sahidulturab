@@ -18,8 +18,8 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-    title: "Sahidul Turab | Operations Leader & MSc in CSE",
-    description: "Portfolio of MD Sahidul Islam Turab, an Operations professional at Shikho specializing in process optimization and technical management",
+    title: "Sahidul Turab | Deputy Manager, Program Operations",
+    description: "Portfolio of MD Sahidul Islam Turab, Deputy Manager, Program Operations at Shikho, with an M.Sc. in CSE (Data Science). Program launches, process optimization, automation and research.",
 };
 
 export default function RootLayout({

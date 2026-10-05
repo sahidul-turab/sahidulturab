@@ -40,8 +40,9 @@ const Orb = ({ icon: Icon, label, href, download }: { icon: any, label: string, 
 export const FloatingUI = () => {
     return (
         <div className="floating-ui-container">
-            <Orb icon={ExternalLink} label="Download CV" href="/Resume - Md Sahidul Islam Turab.pdf" download="Resume - Md Sahidul Islam Turab.pdf" />
+            <Orb icon={ExternalLink} label="Download CV" href="/MD_Sahidul_Islam_Turab_Resume.pdf" download="MD_Sahidul_Islam_Turab_Resume.pdf" />
             <Orb icon={Linkedin} label="LinkedIn" href="https://www.linkedin.com/in/sahidulturab/" />
+            <Orb icon={Github} label="GitHub" href="https://github.com/sahidul-turab" />
             <Orb icon={Mail} label="Email" href="mailto:sahidulturab81@gmail.com" />
         </div>
     );
