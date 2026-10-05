@@ -12,7 +12,7 @@ Shikho, my skills, and my education.
 - **3D scene** built with React Three Fiber, with post-processing effects
 - **Face tracking (optional):** the 3D core turns to follow your head through the webcam, using MediaPipe Face Landmarker. Parts of the scene also react to the mouse.
 - **Interactive skill nodes:** hover a node to highlight technical, operational or data skills
-- **Career timeline** from Junior Executive to Assistant Manager, Operations, at Shikho
+- **Career timeline** of my operations roles at Shikho, from Junior Executive onward
 - Scroll-driven animations (Framer Motion + GSAP), custom cursor and side-dot navigation
 
 ## Tech stack
